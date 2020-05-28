@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-origin: border-box;
+}
+
+body {
+    background-color: purple;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 60%;
+    max-width: 100%;
+    min-width: 400px;
+    height: 350px;
+    box-shadow: 0 100px 200px rgba(0, 0, 0, 0.534);
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container button {
+    background-color: #8e44ad;
+    border: 2px solid #8e44ad;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 500px;
+}
+
+.header {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 20px 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: center;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.control {
+    margin: 10px 10px 10px 10px;
+    padding: 20px 0px 20px 0px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.control label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    align-self: center;
+    justify-self: center;
+}
+
+.control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 92%;
+    margin: 0px 20px 0px 15px;
+}
+
+.signs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.sign {
+    width: 100px;
+    height: 100px;
+}
+
+#correct {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    transform-origin: center;
+    animation-duration: 2000ms;
+}
+
+#wrong {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    transform-origin: center;
+    animation-duration: 2000ms;
+}
+
+#wait {
+    /*animation: heart-beat .25s infinite alternate;
+    animation-name: vanish;
+    transform-origin: center;*/
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes heart-beat{
+    to { transform: scale(1.4);
+    }
+}
+
+@keyframes vanish{
+    0%{
+      opacity: 1;
+      transform: rotateX(90deg);
+    }
+    50%{
+      opacity: 0.5;
+      transform: rotateX(0deg);
+    }
+    100%{
+      display: none;
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+  }
+
+  @keyframes appear{
+    0%{
+        opacity: 0;
+        width: 100px;
+        height: 100px;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      100%{
+        display: none;
+        opacity: 1;
+      }
+  }
+
