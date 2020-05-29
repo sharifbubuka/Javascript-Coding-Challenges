@@ -1,19 +1,19 @@
-    const input = document.getElementById('string');
-    const button = document.getElementById('submit');
-    const waitIcon = document.getElementById('wait');
-    const correctIcon = document.getElementById('correct');
-    const wrongIcon = document.getElementById('wrong');
+const input = document.getElementById('string');
+const button = document.getElementById('submit');
+const waitIcon = document.getElementById('wait');
+const correctIcon = document.getElementById('correct');
+const wrongIcon = document.getElementById('wrong');
 
 button.addEventListener('click', function(){
-    checkPalindrome(input.innerText);
+    checkPalindrome(input.value);
 });
 
-function checkPalindrome(input){
-    if(input === '') {
-        
+function checkPalindrome(test){ 
+    if(test === '') {
         displayAlert('No value was inserted');
-    } else {
-        let reverseString = [...input].reverse().join('');
+    } else { 
+        let reverseString = [...test].reverse().join('');
+        console.log(reverseString + '      ' + test);
         
         // bug: can't seem to vanish and let images reappear accordingly
         //my program flow seems disorganized so far too.
@@ -21,40 +21,40 @@ function checkPalindrome(input){
         //implement this using regex. Check regexone.com for some clarity on regex patterns
 
 
-        if(reverseString === input) {
-            waitIcon.style.animationName = 'vanish';
-            console.log('wait icon vanished');
-            setTimeout(() => {
-                //correctIcon.style.animationName = 'appear';
-                correctIcon.style.setProperty('opacity', '0', 'visibility', 'visible', 'animation-name', 'appear');
-                console.log('correct icon appeared');
-            }, 2000);
-            setTimeout(() => {
-                correctIcon.style.animation = 'heart-beat .25s infinite alternate;';
-                console.log('correct icon heart beat started');
-            }, 4000);
+        if(reverseString === test) { 
+            if((waitIcon.style.visibiity === 'visible') || (wrongIcon.style.visibiity === 'visible')) { 
+                deactivate([waitIcon,wrongIcon]);
+                setTimeout(activate(correctIcon),500);
+            } else {
+                return;
+            }
         } else {
-            waitIcon.style.animationName = 'vanish';
-            setTimeout(() => {
-                wrongIcon.style.animationName = 'appear';
-            }, 2000);
-            setTimeout(() => {
-                wrongIcon.style.animation = 'heart-beat .25s infinite alternate;';
-            }, 4000);
-        }
-    }
-}
+            if((waitIcon.style.visibiity === 'visible') || (correctIcon.style.visibiity === 'visible')) {
+                deactivate([waitIcon,wrongIcon]);
+                setTimeout(activate(wrongIcon),500);
+            } else {
+                return;
+            }
+        } 
+    } 
+} 
 
 function displayAlert(alert) {
     input.value = alert;
-    setTimeout(removeError, 2000);
-    output.value = '';
+    setTimeout(() => {
+        input.value = '';
+    }, 2000);
 }
 
-function removeError() {
-    input.value = '';
+function deactivate(elements) {
+    elements.forEach(element => {
+        element.style.visibiity = 'hidden !important';
+    });
 }
 
+function activate(element) {
+    element.style.visibiity = 'visible !important';
+}
 /*
     Probable use case:
         This could be that white board interview question

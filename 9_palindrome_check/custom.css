@@ -19,7 +19,7 @@ body {
     height: 350px;
     box-shadow: 0 100px 200px rgba(0, 0, 0, 0.534);
     background-color: white;
-    border-radius: 20px;
+    border-radius: 0px 20px 0px 20px;
     display: flex;
     flex-direction: column;
 }
@@ -78,8 +78,12 @@ body {
 }
 
 .signs {
-    display: flex;
-    justify-content: center;
+    background-color: aqua;
+    width: 90%;
+    position: relative;
+    left: 5%;
+    display: fle
+    justify-content: space-between;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -91,62 +95,27 @@ body {
 }
 
 #correct {
+    height: 100px;
+    width: 100px;
     position: absolute;
-    height: 0px;
-    width: 0px;
-    transform-origin: center;
-    animation-duration: 2000ms;
+    left: 43%;
+    visibility: hidden;
 }
 
 #wrong {
+    height: 100px;
+    width: 100px;
     position: absolute;
-    height: 0px;
-    width: 0px;
-    transform-origin: center;
-    animation-duration: 2000ms;
+    left: 43%;
+    visibility: hidden;
 }
 
 #wait {
     /*animation: heart-beat .25s infinite alternate;
     animation-name: vanish;
     transform-origin: center;*/
-    animation-duration: 2000ms;
-    animation-fill-mode: forwards;
+    position: relative;
+    left: 43%;
 }
 
-@keyframes heart-beat{
-    to { transform: scale(1.4);
-    }
-}
-
-@keyframes vanish{
-    0%{
-      opacity: 1;
-      transform: rotateX(90deg);
-    }
-    50%{
-      opacity: 0.5;
-      transform: rotateX(0deg);
-    }
-    100%{
-      display: none;
-      opacity: 0;
-      transform: rotateX(90deg);
-    }
-  }
-
-  @keyframes appear{
-    0%{
-        opacity: 0;
-        width: 100px;
-        height: 100px;
-      }
-      50%{
-        opacity: 0.5;
-      }
-      100%{
-        display: none;
-        opacity: 1;
-      }
-  }
 

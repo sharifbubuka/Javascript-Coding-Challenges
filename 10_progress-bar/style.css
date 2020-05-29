@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    background-color: purple;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+
+.progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    height: 40px;
+    width: 600px;
+}
+
+.progress-done {
+    background: linear-gradient(to left, #F2709C, #FF9472);
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    height: 100%;
+    width: 0px;
+    transition: 1s ease 0.2s;
+}
+
+img {
+     width: 100px;
+     height: 100px;
+     margin-left: 20px;
+     
+ }
+
+@keyframes heart-beat{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.25);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    75%{
+        transform: scale(1.25);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
