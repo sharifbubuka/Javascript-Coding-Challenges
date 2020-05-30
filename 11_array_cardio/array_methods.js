@@ -1,4 +1,4 @@
-//ARRAY METHODS EXAMPLES AS SEEN AT 
+//ARRAY METHODS EXAMPLES AS SEEN AT https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray#
 
 //Array.from();
 console.log(Array.from('foo'));
