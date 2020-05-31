@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Crash Course on Callbacks, Promises and Async Wait by Traversy Media at https://www.youtube.com/watch?v=PoRJizFvM7s">
+        <title>Callbacks, promises, Async Wait</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+            * {
+                fmargin: 0;
+                fpadding: 0;
+            }
+            
+            body {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                background: #12c2e9;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            }
+
+            footer {
+                width: 90vw;
+                height: 100px;
+                display: flex;
+                position: absolute;
+                top: 86%;
+                margin: 0 auto;
+            }
+
+            footer p {
+                font-family: 'Source Code Pro', monospace;
+                font-weight: bold;
+                text-align: center;
+                font-size: 1em;
+                margin-left: 2px;
+                padding: 10px;
+                width: 600px;
+                border-radius: 0px 20px 0px 20px;
+                background-color: orange;
+            }
+
+            footer p a {
+                color: blue;
+                text-decoration: none;
+            }
+
+            #list {
+                background-color: gainsboro;
+                margin: 10px;
+                max-width: 700px;
+                min-width: 80%;
+                min-height: 15px;
+                margin: 20px auto;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                border-radius: 0px 20px 0px 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+        </ul>
+
+        <footer>
+            <p>&copy;Traversy Media: 
+                <a href="https://www.youtube.com/watch?v=PoRJizFvM7s" target="_blank">
+                    https://www.youtube.com/watch?v=PoRJizFvM7s</a></p>
+        </footer>
+
+        <!--<script src="callback.js"></script>-->
+        <!--<script src="promise.js"></script>-->
+        <script src="async_await.js"></script>
+    </body>
+</html>
