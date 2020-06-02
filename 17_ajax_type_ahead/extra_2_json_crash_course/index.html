@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Json Crash Course</title>
+        <script src="ug.json" type="text/javascript"></script>
+        <style>
+            body {
+                background-color: blueviolet;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: cornsilk;
+                min-width: 200px;
+                min-height: 50px;
+                border-radius: 20px;
+                flex: 1;
+                flex-direction: column;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            /*
+                ======Valid JSON data types======
+                    -string -number -object
+                    -array -true -false -null
+            */
+        /*
+            let person_object_1 = {
+                name: "Bubuka Sharif",
+                age: 21,
+                //xxx Methods are not valid json data types xxxx
+                passcode: function(code) {
+                    return user.authentication.passcode(code);
+                }
+                //Notice how the JSON.stringify() method does not display the function??
+            };
+
+            console.log(person_object_1);
+            //change an object to json with JSON:stringify()
+            let json_data = JSON.stringify(person_object_1);
+            console.log(`The json data from the object is:     ${json_data}`);
+            //change Json back to an object with JSON.parse()
+            let person_object_2 = JSON.parse(json_data);
+            console.log(person_object_2);
+
+            //How to access locally stored json data??????????????
+            //Node.js is required
+            */
+
+            //XMLHttp Request <<https://www.w3schools.com/xml/xml_http.asp>>
+            //This requres the .html file to run on a server with node.js
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let response = JSON.parse(xhttp.responseText);
+                    (function() {
+                        let cities = response;
+                        for (city of cities) {
+                            console.log(city.city);
+                            if (cities.indexOf(city) === 0 || cities.indexOf(city) % 2 === 0) {
+                                document.body.innerHTML += `<div style="background-color: crimson;">${city.city}</div>`;
+                            } else {
+                                document.body.innerHTML += `<div style="background-color: cornsilk;">${city.city}</div>`;
+                            }
+                            
+                        } 
+                    })();
+                    
+                }          
+            };
+            xhttp.open("GET", "ug.json", true);
+            xhttp.send();
+
+        
+
+
+
+            
+        </script>
+    </body>
+</html>
