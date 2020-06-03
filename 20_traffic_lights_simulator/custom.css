@@ -1,0 +1,67 @@
+/* Use-case for css variables*/
+:root {
+    --red: #c0392b;
+    --yellow: #f1c40f;
+    --green: #2ecc71;
+    --body-background: #1abc9c;
+    --container-background: #2c3e50;
+    --circle: 50%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--container-background);
+    height: 200px;
+    width: 70px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.circle {
+    background-color: rgba(0,0,0,0.3);
+    height: 40px;
+    width: 40px;
+    border-radius: var(--circle);
+    position: relative;
+}
+
+/* Crash Course on css selectors at https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors */
+.circle:after {
+    border-right: 4px solid rgba(255, 225, 255, 0.6);
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.circle.red {
+    background-color: var(--red);
+    box-shadow: 0 0 20px 5px var(--red);
+}
+
+.circle.yellow {
+    background-color: var(--yellow);
+    box-shadow: 0 0 20px 5px var(--yellow);
+}
+
+.circle.green {
+    background-color: var(--green);
+    box-shadow: 0 0 20px 5px var(--green);
+}
