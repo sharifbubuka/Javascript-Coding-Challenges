@@ -1,0 +1,20 @@
+//Crash Course offered by Traversy Media at https://www.youtube.com/watch?v=iYM2zFP3Zn0&list=PL5o285ahn_HVw3uRNhQVU0CaUcgENIfS7&index=3&t=0s
+
+<HTTP> Hyper Text Transfer Protocol
+<HTTPS> Hyper Text Transfer Protocol Secure
+<SSL> Secure Socket Layer
+<TSL> Transport Layer Security
+
+===HTTP Methods===
+<GET> Retrieve data from the server
+<POST> Submit data to the server
+<PUT> Update data already on the server
+<DELETE> Delete data from the server
+
+===HTTP Status Codes===
+1xx: Informational --> Request received / processing
+2xx: Success --> Successfully recieved, understood and accepted
+3xx: Redirect --> Further action must be taken / redirect
+4xx: Client Error --> Request does not have what it needs
+5xx: Server Error --> Server failed to fulfil an apperent valid request
+
