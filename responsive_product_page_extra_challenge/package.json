@@ -1,0 +1,17 @@
+{
+  "name": "one_product_responsive_page",
+  "version": "1.0.0",
+  "description": "A one product responsive web page with html, css and javascript and node at the backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "author": "Bubuka Sharif <sharifbubuka256@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.17.1"
+  }
+}
