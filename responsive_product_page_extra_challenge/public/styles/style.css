@@ -1,7 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
 }
 
 html{
@@ -95,7 +96,7 @@ nav ul li:hover{
 }
 
 .nav-right i{
-    margin-right: 1rem;
+    margin-right: 1rem !important;
 }
 
 .nav-right i:first-child{
@@ -123,6 +124,7 @@ nav ul li:hover{
     height: 100vh;
     flex: 1;
     position: relative;
+    display: block;
 }
 
 .tone-2 img{
@@ -207,8 +209,136 @@ nav ul li:hover{
     }
 
     .product-info h2{
+        padding: 2rem;
+        font-size: 2rem;
+    }
+
+    .btn{
         padding: 1.5rem;
         font-size: 1rem;
     }
 }
 
+@media screen and (max-width: 900px) {
+    .logo{
+        padding-left: 1.5rem;
+    }
+    
+    nav ul{
+        height: 5rem;
+        font-size: 1.4rem;
+    }
+
+    nav ul li{
+        padding: 0 1.5rem;
+        line-height: 5rem;
+    }
+
+    .tone-2 img{
+        left: -5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tone-2 img{
+        left: -2.5rem;
+    }
+
+    .product-info p{
+        font-size: 1.2rem;
+    }
+
+    .btn{
+        padding: 1rem;
+    }
+
+    nav{
+        display: flex;
+        border-bottom: none;
+        flex-direction: column;
+        width: 25rem;
+        height: 100vh;
+        background-color: #f7f7f6;
+        justify-content: space-evenly;
+        transform: translateX(-25rem);
+        transition: transform .5s;
+    }
+
+    nav ul{
+        height: initial;
+        display: block;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    nav ul li{
+        padding: 0;
+        line-height: initial;
+        margin-bottom: 2rem;
+    }
+
+    .logo{
+        padding: 0;
+    }
+
+    .nav-right ul li,
+    .nav-right ul li:nth-child(1){
+        border: none;
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    .fa-times{
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    } 
+    
+    .active{
+        transform: translateX(0);
+    }
+
+    .overlay{
+        position: absolute;
+        width: 0;
+        height: 100vh;
+        background-color: rgba(0,0,0,.8);
+        z-index: 998;
+        opacity: 0;
+        transition: opacity .5s;
+    }
+
+    .overlay.menu-open{
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .tone-2{
+        left: -1rem;
+    }
+
+    .product-info h1{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-info p{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-info h2{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn{
+        padding: .7rem;
+        font-size: .8rem;
+    }
+}
